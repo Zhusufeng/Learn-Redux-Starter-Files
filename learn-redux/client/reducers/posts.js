@@ -9,6 +9,7 @@
 // Reudcer takes this in and returns an updated copy of store
 
 function posts(state = [], action) {
+  console.log('The post will change');
   console.log(state, action);
   return state;
 }
