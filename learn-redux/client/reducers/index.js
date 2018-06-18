@@ -9,6 +9,6 @@ import comments from './comments';
 
 // 3 things live in state: posts, comments, routes
 // Create the rootReducer with those items:
-const rootReducer = combineReducers({posts, comments, router: routerReducer });
+const rootReducer = combineReducers({posts, comments, routing: routerReducer });
 
 export default rootReducer;
