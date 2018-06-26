@@ -18,4 +18,13 @@ const store = createStore(rootReducer, defaultState);
 
 export const history = syncHistoryWithStore(browserHistory, store);
 
+// Below allows reducers to be hot reloaded
+if (module.hot) { // check if module is hot
+  module.hot.accept('./reducers/', () => { // accept hot module
+    // re-require and swap out module for us 
+    // you cannot use an es6 import statement inside function
+    const nextRootReducer = require('./reducers/index').default;
+    store.replaceReducer(nextRootReducer);
+  })
+}
 export default store;
